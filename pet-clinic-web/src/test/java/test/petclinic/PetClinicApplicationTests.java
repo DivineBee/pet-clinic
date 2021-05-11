@@ -1,4 +1,4 @@
-package triss.springframework.petclinic;
+package test.petclinic;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
