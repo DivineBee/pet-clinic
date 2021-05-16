@@ -5,7 +5,7 @@ package triss.springframework.petclinic.model;
  * @created 11.05.2021 - 16:31
  * @project pet-clinic
  */
-public class PetType {
+public class PetType extends BaseEntity{
     private String name;
 
     public String getName() {
