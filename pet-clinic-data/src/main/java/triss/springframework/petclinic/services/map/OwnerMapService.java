@@ -1,5 +1,6 @@
 package triss.springframework.petclinic.services.map;
 
+import org.springframework.stereotype.Service;
 import triss.springframework.petclinic.model.Owner;
 import triss.springframework.petclinic.services.OwnerService;
 
@@ -10,6 +11,7 @@ import java.util.Set;
  * @created 17.05.2021 - 10:54
  * @project pet-clinic
  */
+@Service
 public class OwnerMapService extends AbstractMapService<Owner, Long> implements OwnerService {
 
     @Override

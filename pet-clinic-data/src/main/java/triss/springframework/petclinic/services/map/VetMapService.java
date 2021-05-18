@@ -1,5 +1,6 @@
 package triss.springframework.petclinic.services.map;
 
+import org.springframework.stereotype.Service;
 import triss.springframework.petclinic.model.Vet;
 import triss.springframework.petclinic.services.CrudService;
 import triss.springframework.petclinic.services.VetService;
@@ -11,6 +12,7 @@ import java.util.Set;
  * @created 17.05.2021 - 11:02
  * @project pet-clinic
  */
+@Service
 public class VetMapService extends AbstractMapService<Vet, Long> implements VetService {
     @Override
     public Set<Vet> findAll() {

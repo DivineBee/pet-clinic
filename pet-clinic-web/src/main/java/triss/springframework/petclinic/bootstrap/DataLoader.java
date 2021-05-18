@@ -5,10 +5,7 @@ import org.springframework.stereotype.Component;
 import triss.springframework.petclinic.model.Owner;
 import triss.springframework.petclinic.model.Vet;
 import triss.springframework.petclinic.services.OwnerService;
-import triss.springframework.petclinic.services.PetService;
 import triss.springframework.petclinic.services.VetService;
-import triss.springframework.petclinic.services.map.OwnerMapService;
-import triss.springframework.petclinic.services.map.VetMapService;
 
 /**
  * @author Beatrice V.
@@ -21,9 +18,9 @@ public class DataLoader implements CommandLineRunner {
     private final OwnerService ownerService;
     private final VetService vetService;
 
-    public DataLoader() {
-        ownerService = new OwnerMapService();
-        vetService = new VetMapService();
+    public DataLoader(OwnerService ownerService, VetService vetService) {
+        this.ownerService = ownerService;
+        this.vetService = vetService;
     }
 
     @Override
