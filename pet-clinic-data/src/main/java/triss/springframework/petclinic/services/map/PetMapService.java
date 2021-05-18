@@ -1,7 +1,7 @@
 package triss.springframework.petclinic.services.map;
 
 import triss.springframework.petclinic.model.Pet;
-import triss.springframework.petclinic.services.CrudService;
+import triss.springframework.petclinic.services.PetService;
 
 import java.util.Set;
 
@@ -10,7 +10,7 @@ import java.util.Set;
  * @created 17.05.2021 - 10:59
  * @project pet-clinic
  */
-public class PetMapService extends AbstractMapService<Pet, Long> implements CrudService<Pet, Long> {
+public class PetMapService extends AbstractMapService<Pet, Long> implements PetService {
     @Override
     public Set<Pet> findAll() {
         return super.findAll();
