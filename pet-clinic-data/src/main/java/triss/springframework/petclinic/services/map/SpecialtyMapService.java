@@ -2,7 +2,7 @@ package triss.springframework.petclinic.services.map;
 
 import org.springframework.stereotype.Service;
 import triss.springframework.petclinic.model.Specialty;
-import triss.springframework.petclinic.services.SpecialtiesService;
+import triss.springframework.petclinic.services.SpecialtyService;
 
 import java.util.Set;
 
@@ -12,7 +12,7 @@ import java.util.Set;
  * @project pet-clinic
  */
 @Service
-public class SpecialtyMapService extends AbstractMapService<Specialty, Long> implements SpecialtiesService {
+public class SpecialtyMapService extends AbstractMapService<Specialty, Long> implements SpecialtyService {
 
     @Override
     public Set<Specialty> findAll() {
