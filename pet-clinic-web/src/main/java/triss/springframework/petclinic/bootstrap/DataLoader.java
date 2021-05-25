@@ -1,13 +1,17 @@
 package triss.springframework.petclinic.bootstrap;
 
+import org.apache.tomcat.jni.Local;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import triss.springframework.petclinic.model.Owner;
+import triss.springframework.petclinic.model.Pet;
 import triss.springframework.petclinic.model.PetType;
 import triss.springframework.petclinic.model.Vet;
 import triss.springframework.petclinic.services.OwnerService;
 import triss.springframework.petclinic.services.PetTypeService;
 import triss.springframework.petclinic.services.VetService;
+
+import java.time.LocalDate;
 
 /**
  * @author Beatrice V.
@@ -40,12 +44,32 @@ public class DataLoader implements CommandLineRunner {
         Owner owner1 = new Owner();
         owner1.setFirstName("Michael");
         owner1.setLastName("Weston");
+        owner1.setAddress("123 whatever");
+        owner1.setCity("Bubuieci");
+        owner1.setTelephone("0723854945");
+
+        Pet mikesPet = new Pet();
+        mikesPet.setPetType(savedDogPetType);
+        mikesPet.setOwner(owner1);
+        mikesPet.setBirthDate(LocalDate.now());
+        mikesPet.setName("Boris");
+        owner1.getPets().add(mikesPet);
 
         ownerService.save(owner1);
 
         Owner owner2 = new Owner();
         owner2.setFirstName("Fiona");
         owner2.setLastName("Glenanne");
+        owner2.setAddress("124 whatever");
+        owner2.setCity("Bubuieci");
+        owner2.setTelephone("0765854945");
+
+        Pet fionasPet = new Pet();
+        fionasPet.setPetType(savedCatPetType);
+        fionasPet.setOwner(owner2);
+        fionasPet.setBirthDate(LocalDate.now());
+        fionasPet.setName("Murka");
+        owner2.getPets().add(fionasPet);
 
         ownerService.save(owner2);
 
