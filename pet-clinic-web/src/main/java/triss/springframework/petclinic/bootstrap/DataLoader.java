@@ -3,10 +3,7 @@ package triss.springframework.petclinic.bootstrap;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 import triss.springframework.petclinic.model.*;
-import triss.springframework.petclinic.services.OwnerService;
-import triss.springframework.petclinic.services.PetTypeService;
-import triss.springframework.petclinic.services.SpecialtyService;
-import triss.springframework.petclinic.services.VetService;
+import triss.springframework.petclinic.services.*;
 
 import java.time.LocalDate;
 
@@ -22,12 +19,14 @@ public class DataLoader implements CommandLineRunner {
     private final VetService vetService;
     private final PetTypeService petTypeService;
     private final SpecialtyService specialtyService;
+    private final VisitService visitService;
 
-    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialtyService specialtyService) {
+    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialtyService specialtyService, VisitService visitService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeService = petTypeService;
         this.specialtyService = specialtyService;
+        this.visitService = visitService;
     }
 
     @Override
@@ -90,6 +89,13 @@ public class DataLoader implements CommandLineRunner {
         owner2.getPets().add(fionasPet);
 
         ownerService.save(owner2);
+
+        Visit catVisit= new Visit();
+        catVisit.setPet(fionasPet);
+        catVisit.setDate(LocalDate.now());
+        catVisit.setDescription("sneezy kitty");
+
+        visitService.save(catVisit);
 
         System.out.println("Loaded Owners....");
 
