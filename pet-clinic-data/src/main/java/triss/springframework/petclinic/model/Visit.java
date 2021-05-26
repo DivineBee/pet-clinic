@@ -1,16 +1,26 @@
 package triss.springframework.petclinic.model;
 
+import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.NavigableMap;
 
 /**
  * @author Beatrice V.
  * @created 23.05.2021 - 17:20
  * @project pet-clinic
  */
+@Entity
+@Table(name = "visits")
 public class Visit extends BaseEntity{
 
+    @Column(name = "date")
     private LocalDate date;
+
+    @Column(name = "description")
     private String description;
+
+    @ManyToOne
+    @JoinColumn(name = "pet_id")
     private Pet pet;
 
     public LocalDate getDate() {
