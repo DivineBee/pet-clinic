@@ -3,7 +3,6 @@ package triss.springframework.petclinic.services.map;
 import org.springframework.stereotype.Service;
 import triss.springframework.petclinic.model.Owner;
 import triss.springframework.petclinic.model.Pet;
-import triss.springframework.petclinic.model.PetType;
 import triss.springframework.petclinic.services.OwnerService;
 import triss.springframework.petclinic.services.PetService;
 import triss.springframework.petclinic.services.PetTypeService;

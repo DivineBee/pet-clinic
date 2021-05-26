@@ -9,4 +9,5 @@ import triss.springframework.petclinic.model.Owner;
  * @project pet-clinic
  */
 public interface OwnerRepository extends CrudRepository<Owner, Long> {
+    Owner findByLastName(String lastName);
 }
