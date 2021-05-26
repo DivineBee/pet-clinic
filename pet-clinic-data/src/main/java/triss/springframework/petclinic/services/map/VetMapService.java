@@ -1,9 +1,9 @@
 package triss.springframework.petclinic.services.map;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 import triss.springframework.petclinic.model.Specialty;
 import triss.springframework.petclinic.model.Vet;
-import triss.springframework.petclinic.services.CrudService;
 import triss.springframework.petclinic.services.SpecialtyService;
 import triss.springframework.petclinic.services.VetService;
 
@@ -15,6 +15,7 @@ import java.util.Set;
  * @project pet-clinic
  */
 @Service
+@Profile({"default", "map"})
 public class VetMapService extends AbstractMapService<Vet, Long> implements VetService {
 
     private final SpecialtyService specialtyService;

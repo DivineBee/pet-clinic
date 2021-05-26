@@ -1,5 +1,6 @@
 package triss.springframework.petclinic.services.map;
 
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 import triss.springframework.petclinic.model.Owner;
 import triss.springframework.petclinic.model.Pet;
@@ -15,6 +16,7 @@ import java.util.Set;
  * @project pet-clinic
  */
 @Service
+@Profile({"default", "map"})
 public class OwnerMapService extends AbstractMapService<Owner, Long> implements OwnerService {
 
     private final PetTypeService petTypeService;
