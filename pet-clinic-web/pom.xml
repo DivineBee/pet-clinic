@@ -69,6 +69,11 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+
+<!--        <dependency>-->
+<!--            <groupId>org.projectlombok</groupId>-->
+<!--            <artifactId>lombok</artifactId>-->
+<!--        </dependency>-->
     </dependencies>
 
     <build>
@@ -104,6 +109,7 @@
                         <artifactId>mockito-core</artifactId>
                         <version>${mockito.version}</version>
                     </dependency>
+
                 </dependencies>
             </plugin>
         </plugins>
