@@ -15,11 +15,11 @@ import java.util.Set;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 @Entity
 @Table(name = "owners")
 public class Owner extends Person{
 
+    @Builder
     public Owner(Long id, String firstName, String lastName, Set<Pet> pets, String city, String telephone, String address) {
         super(id, firstName, lastName);
         this.pets = pets;
